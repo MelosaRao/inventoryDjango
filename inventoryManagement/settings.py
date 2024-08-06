@@ -81,7 +81,7 @@ DATABASES = {
         'NAME': 'inventoryPostgres',
 
         'USER': 'postgres',
-        'PASSWORD': '$Sisa2$nao$',
+        'PASSWORD': '',
         'HOST': 'localhost',
         'PORT': '5432',
     }
