@@ -1,0 +1,64 @@
+{% extends 'inventory/base.html' %}
+{%block content%}
+    {% if messages %}
+		<div class="mt-2">
+			{% for message in messages %}
+				{% if message.tags == 'error' %}
+					<div class="col-md-10 col-11 mx-auto alert alert-danger">
+						{{ message }}
+					</div>
+				{% endif %}
+			{% endfor %}
+		</div>
+	{% endif %}
+
+
+    <div class="col-md-10 col-11 mx-auto mt-5">
+        <div class="d-flex justify-content-end">
+            <a href="{%url 'additem'%}" class="btn btn-success">+</a>
+        </div>
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Qty</th>
+                    <th>Category</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if items|length == 0 %}
+                <tr>
+                    <th>-</th>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+
+                {% else %}
+
+                {% for item in items%}
+                <tr>
+                    <th>{{item.id}}</th>
+                    <td>{{item.name}}</td>
+                    {%if item.id in low_inventory_ids%}
+                    <td class="text-danger">{{item.quantity}}</td>
+                    {%else%}
+                    <td class="text-success">{{item.quantity}}</td>
+                    {%endif%}
+                    <td>{{item.category.name}}</td>
+                    <td><a href="{%url 'edit_item' item.id%}"
+                        class="btn btn-outline-primary">Edit</a></td>
+                    <td><a href="{%url 'delete_item' item.id%}"
+                        class="btn btn-outline-danger">Delete</a></td>
+                </tr>
+                {%endfor%}
+                {%endif%}
+            </tbody>
+        </table>
+    </div>
+{%endblock content%}

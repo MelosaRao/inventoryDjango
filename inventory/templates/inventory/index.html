@@ -1,0 +1,11 @@
+{% extends 'inventory/base.html' %}
+
+{%block content%}
+
+    <div class="col-sm-11 col-md-5 mx-auto mt-4 px-3 text-center">
+        <h1> Manage Your Inventory</h1>
+        <p>Keep track of your inventory and get alerts on shortages</p>
+        <a href="{% url 'dashboard' %}" class="btn btn-success">Get Started Now</a>
+    </div>
+
+{% endblock content %}
