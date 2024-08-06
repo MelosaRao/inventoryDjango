@@ -20,7 +20,7 @@ Django, Bootsrap , PostgreSQL
 - Migrated from sqlite database used in tutorial to PostgreSQL as this is more widely used and easier to find hosting option for
 - Bootstrap Customisation
 
-  ## Updates
-  I want to implement the follwing features in the future:
-  - Adding items using Excel,csv, json file to add items
+## Updates
+I want to implement the follwing features in the future:
+- Adding items using Excel,csv, json file to add items
     
