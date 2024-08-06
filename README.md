@@ -22,5 +22,5 @@ Django, Bootsrap , PostgreSQL
 
   ## Updates
   I want to implement the follwing features in the future:
-  - Adding using Excel,csv, json file to add items
+  - Adding items using Excel,csv, json file to add items
     
